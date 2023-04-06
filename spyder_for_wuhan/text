@@ -1,0 +1,25 @@
+				document.writeln("<a href="+url+" title="+title+">");
+				document.writeln("<span style='width:50em;overflow:hidden;white-space: nowrap;text-overflow: ellipsis;'>"+title+"</span>");
+				document.writeln("<span class='time'>2022-12-23</span>");
+				document.writeln("</a>");
+			</script>
+
+			<script>
+				var url = "";
+				if (url == ""||!url.startsWith("http")) {
+					url = ""
+				}
+				if (url == ""||!url.startsWith("http")) {
+					url = "./202212/t20221222_2117793.shtml"
+				}
+				var title = "武汉2010年12月21日24时新型冠状病毒肺炎疫情最新情况";
+				if(title==""){
+					title = "";
+				}
+				if(title==""){
+					title = "";
+				}
+				if(title==""){
+					title = "";
+				}
+				var FILENUM= ""
