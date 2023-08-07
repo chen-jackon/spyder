@@ -8,6 +8,7 @@ import re
 class spyder(object):
     def __init__(self):
         self.bvid = "BV1cu411o7Ym"  # 在打开b站后会获取bvid 具体使用查看readme.md
+        self.bvid = input("请输入pvid")
         self.video_list = "https://api.bilibili.com/x/player/pagelist?bvid={}"  # 根据bvid 可以获取当前视频的列表
         end = "bvid={}".format(self.bvid)  # 跟下面的self.video进行拼接, 方便后面的format只对cid进行format
         self.video = "https://api.bilibili.com/x/player/playurl?cid={}&qn=80&type=&otype=json&fourk=1&" + end
@@ -45,11 +46,12 @@ class spyder(object):
         return video, voice, quality
 
     def Sync_run(self):
+        
         self.num = self._cid_name()
-        tn = tqdm(self.cid_list)  # 如果想进行测试, 在这里切片操作只获取前面两个视频即可
+        # tn = tqdm(self.cid_list)  # 如果想进行测试, 在这里切片操作只获取前面两个视频即可
         all = []
         rstr = r"[\/\\\:\*\?\"\<\>\|]"  # 非法路径名称
-        for i, data in enumerate(tn):
+        for i, data in enumerate(self.cid_list):
             dic = {}
             dic['name'] = self.name_list[i]  # Video name
             dic['cid'] = self.cid_list[i]  # Video cid
