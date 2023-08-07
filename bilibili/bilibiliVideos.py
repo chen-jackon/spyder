@@ -1,7 +1,7 @@
 import requests
 import json
 import os
-from tqdm import tqdm
+# from tqdm import tqdm
 import re
 
 
