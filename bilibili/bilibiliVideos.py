@@ -17,7 +17,7 @@ class spyder(object):
             'referer': "https://www.bilibili.com/",
         }
         # 指定保存视频的目录
-        self.save_file = "../data/music/海阔天空"
+        self.save_file = "../data/"
         # 如果没有保存文件的目录, 新建目录
         if not os.path.exists(self.save_file):
             os.makedirs(self.save_file)
