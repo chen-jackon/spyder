@@ -7,6 +7,7 @@ import re
 
 class spyder(object):
     def __init__(self):
+        home = os.getenv("HOME")
         self.bvid = "BV1cu411o7Ym"  # 在打开b站后会获取bvid 具体使用查看readme.md
         self.bvid = input("请输入pvid")
         self.video_list = "https://api.bilibili.com/x/player/pagelist?bvid={}"  # 根据bvid 可以获取当前视频的列表
@@ -17,7 +18,7 @@ class spyder(object):
             'referer': "https://www.bilibili.com/",
         }
         # 指定保存视频的目录
-        self.save_file = "../data/"
+        self.save_file = os.path.join(home,"Movies")
         # 如果没有保存文件的目录, 新建目录
         if not os.path.exists(self.save_file):
             os.makedirs(self.save_file)
