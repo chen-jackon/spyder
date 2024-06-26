@@ -18,7 +18,7 @@ class spyder(object):
             'referer': "https://www.bilibili.com/",
         }
         # 指定保存视频的目录
-        self.save_file = os.path.join(home,"Movies")
+        self.save_file = os.path.join(home, "Movies")
         # 如果没有保存文件的目录, 新建目录
         if not os.path.exists(self.save_file):
             os.makedirs(self.save_file)
@@ -47,7 +47,7 @@ class spyder(object):
         return video, voice, quality
 
     def Sync_run(self):
-        
+
         self.num = self._cid_name()
         # tn = tqdm(self.cid_list)  # 如果想进行测试, 在这里切片操作只获取前面两个视频即可
         all = []
@@ -68,7 +68,7 @@ class spyder(object):
             # voice_res = requests.get(self.all[i]['voice'], headers=self.headers)
             # print(self.save_file + self.all[i]['name']+'.mp4')
 
-            with open(os.path.join(self.save_file, re.sub(rstr, "_", all[i]['name'])) + '.mp4', 'wb+')as f:
+            with open(os.path.join(self.save_file, re.sub(rstr, "_", all[i]['name'])) + '.mp4', 'wb+') as f:
                 f.write(video_res.content)
 
 
